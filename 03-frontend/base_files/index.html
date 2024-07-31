@@ -8,21 +8,25 @@
 </head>
 <body>
     <header>
-        <nav>
-            <a href="login.html" id="login-link">Login</a>
-        </nav>
+        <img src="logo.png" alt="Application Logo" class="logo">
+        <a href="login.html" class="login-button">Login</a>
     </header>
+
     <main>
-        <section id="filter">
-            <label for="country-filter">Filter by Country:</label>
-            <select id="country-filter">
-                <!-- Options will be populated dynamically -->
-            </select>
-        </section>
-        <section id="places-list">
-            <!-- List of places will be populated dynamically -->
+        <section class="places-list">
+            <article class="place-card">
+                <img src="place1.jpg" alt="Place Image" class="place-image">
+                <h2>Place Name</h2>
+                <p>Price per night: $100</p>
+                <p>Location: City, Country</p>
+                <button class="details-button">View Details</button>
+            </article>
+            <!-- Répéter pour les autres lieux -->
         </section>
     </main>
-    <script src="scripts.js"></script>
+
+    <footer>
+        <p>&copy; 2024 All rights reserved.</p>
+    </footer>
 </body>
 </html>
