@@ -7,23 +7,36 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <img src="logo.png" alt="Application Logo" class="logo">
+        <a href="login.html" class="login-button">Login</a>
+    </header>
+
     <main>
-        <section id="place-details">
-            <!-- Place details will be populated dynamically -->
-        </section>
-        <section id="reviews">
-            <!-- Reviews will be populated dynamically -->
-        </section>
-        <section id="add-review">
-            <h2>Add a Review</h2>
-            <form id="review-form">
-                <label for="review-text">Review:</label>
-                <textarea id="review-text" name="review-text" required></textarea>
-                
-                <button type="submit">Submit</button>
-            </form>
+        <section class="place-details">
+            <img src="place1-large.jpg" alt="Place Image" class="place-image-large">
+            <div class="place-info">
+                <h1>Place Name</h1>
+                <p>Host: Host Name</p>
+                <p>Price per night: $100</p>
+                <p>Location: City, Country</p>
+                <p>Description: Detailed description of the place.</p>
+                <p>Amenities: List of amenities.</p>
+            </div>
+            <section class="reviews">
+                <article class="review-card">
+                    <p>Comment: This place is amazing!</p>
+                    <p>User: User Name</p>
+                    <p>Rating: 5 stars</p>
+                </article>
+                <!-- Répéter pour les autres commentaires -->
+            </section>
+            <a href="add_review.html" class="add-review">Add a Review</a>
         </section>
     </main>
-    <script src="scripts.js"></script>
+
+    <footer>
+        <p>&copy; 2024 All rights reserved.</p>
+    </footer>
 </body>
 </html>
