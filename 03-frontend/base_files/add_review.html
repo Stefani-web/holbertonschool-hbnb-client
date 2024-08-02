@@ -13,22 +13,23 @@
     </header>
 
     <main>
-        <form action="#" method="post" class="review-form">
-            <label for="comment">Comment:</label>
-            <textarea id="comment" name="comment" required></textarea>
-
-            <label for="rating">Rating:</label>
-            <select id="rating" name="rating" required>
-                <option value="5">5 stars</option>
-                <option value="4">4 stars</option>
-                <option value="3">3 stars</option>
-                <option value="2">2 stars</option>
-                <option value="1">1 stars</option>
-            </select>
-
-            <button type="submit">Submit Review</button>
-        </form>
-    </main>
+      <h1>Add Review</h1>
+      <div class="add-review">
+          <form id="add-review-form">
+              <label for="review">Your Review:</label>
+              <textarea id="review" name="review" rows="4" required></textarea>
+              <label for="rating">Rating:</label>
+              <select id="rating" name="rating" required>
+                  <option value="1">1 Star</option>
+                  <option value="2">2 Stars</option>
+                  <option value="3">3 Stars</option>
+                  <option value="4">4 Stars</option>
+                  <option value="5">5 Stars</option>
+              </select>
+              <button type="submit">Submit Review</button>
+          </form>
+      </div>
+  </main>
 
     <footer>
         <p>&copy; 2024 All rights reserved.</p>

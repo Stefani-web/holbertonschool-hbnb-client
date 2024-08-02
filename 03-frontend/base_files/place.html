@@ -13,45 +13,46 @@
     </header>
 
     <main>
-        <section id="place-details">
-            <img src="place1.jpg" alt="Place Image" class="place-image-large">
-            <div class="place-info">
-                <h1>Beautiful Beach House</h1>
-                <p>Host: John Doe</p>
+      <h1>Beautiful Beach House</h1>
+      <div class="place-details">
+          <div id="place-info"></div>
+          <ul id="place-amenities">
+            <p>Host: John Doe</p>
                 <p>Price per night: $150</p>
                 <p>Location: Los Angeles, United States</p>
                 <p>Description: A beautiful beach house with amazing views...</p>
                 <p>Amenities: Wifi, Pool, Air Conditioning</p>
-            </div>
-            <section id="reviews">
-              <h2>Reviews</h2>
-              <div class="review-card">
-                <h3>Jane Smith:</h3>
-                <p>Great place to stay!</p>
-                <p>Rating: ****</p>
-              </div>
-
-              <div class="review-card">
-                <h3>Robert Brown:</h3>
-                <p>Amazing location and very comfortable</p>
-                <p>Rating: *****</p>
-              </div>
-                <!-- Répéter pour les autres commentaires -->
-            </section>
-
-            <section id="add-review">
-              <button id="review-button">Add review</button>
-              <form id="review-form">
-                  <h2>Add a Review</h2>
-                  <label for="review-text">Review:</label>
-                  <textarea id="review-text" name="review-text" required></textarea>
-                  <button type="submit">Submit</button>
+             </div>
+      </div>
+      <h2>Reviews</h2>
+      <div id="reviews-list">
+        <h3>Jane Smith:</h3>
+               <p>Great place to stay!</p>
+               <p>Rating: *****</p>
+            </div> 
+      </div>
+      <div id="add-review-form">
+          <h2>Add a Review</h2>
+          <div class="add-review">
+              <form>
+                  <label for="review">Your Review:</label>
+                  <textarea id="review" name="review" rows="4" required></textarea>
+                  <label for="rating">Rating:</label>
+                  <select id="rating" name="rating" required>
+                      <option value="1">1 Star</option>
+                      <option value="2">2 Stars</option>
+                      <option value="3">3 Stars</option>
+                      <option value="4">4 Stars</option>
+                      <option value="5">5 Stars</option>
+                  </select>
+                  <button type="submit">Submit Review</button>
               </form>
-          </section>
-    </main>
+          </div>
+      </div>
+  </main>
+
     <footer>
         <p>&copy; 2024 All rights reserved.</p>
     </footer>
-    <script src="scripts.js"></script>
 </body>
 </html>
