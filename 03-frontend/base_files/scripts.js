@@ -80,7 +80,7 @@ function getCookie(name) {
   if (parts.length === 2) return parts.pop().split(';').shift();
 }
 
-//Récupérer les données des lieux / PROBLEME PROBABLE ICI POUR RECUPERER LES FETCH
+//Retrieve location data
 async function fetchPlaces() {
   try {
       let response = await fetch('http://127.0.0.1:5000/places', {
@@ -112,7 +112,7 @@ async function fetchPlaces() {
   }
 }
 
-// Afficher la liste des lieux / ICI AUSSI A VERIFIER POUR RECUPERER LES DONNEES
+// Show list of locations / ALSO CHECK HERE TO RECOVER DATA
 function displayPlaces(places) {
   const placesList = document.getElementById('places-list');
   placesList.innerHTML = '';
@@ -134,7 +134,7 @@ function displayPlaces(places) {
   });
 }
 
-// Filtrage côté client
+// Client-side filtering
 function filterPlaces(selectedCountry) {
   const places = document.querySelectorAll('.place-card');
 
@@ -148,7 +148,7 @@ function filterPlaces(selectedCountry) {
   });
 }
 
-// Fonction pour obtenir les paramètres de la requête
+// Function to get query parameters
 function getQueryParams() {
   let params = {};
   let queryString = window.location.search.substring(1);
@@ -159,7 +159,7 @@ function getQueryParams() {
   return params;
 }
 
-// --Extraire l'ID de l'endroit à partir des paramètres de l'URL
+// --Extract the location ID from the URL parameters
 function getPlaceIdFromUrl() {
   const params = new URLSearchParams(window.location.search);
   return params.get('id');
@@ -170,7 +170,7 @@ function redirectFromUrl() {
   return params.get('redirect');
 }
 
-//Faire une requête AJAX pour obtenir les détails de l'endroit
+//Make an AJAX request to get the location details
 async function fetchPlaceDetails(placeId) {
   const response = await fetch(`http://127.0.0.1:5000/places/${placeId}`, {
       method: 'GET'
@@ -183,7 +183,7 @@ async function fetchPlaceDetails(placeId) {
   }
 }
 
-//Remplir dynamiquement les détails de l'endroit
+//Dynamically fill location details
 async function displayPlaceDetails(placeId) {
   const place = await fetchPlaceDetails(placeId);
   const content = document.getElementById('place-info');
@@ -204,7 +204,7 @@ async function displayPlaceDetails(placeId) {
       amenitiesList.appendChild(li);
   });
 
-  // Afficher les avis
+  // Show reviews
   const reviewsList = document.getElementById('reviews-list');
   reviewsList.innerHTML = '';
   place.reviews.forEach(review => {
@@ -219,7 +219,7 @@ async function displayPlaceDetails(placeId) {
   });
 }
 
-// Afficher le formulaire d'ajout de commentaire seulement si l'utilisateur est authentifié
+// Show the comment addition form only if the user is authenticated
 function isAuthenticated() {
   return !!getCookie('token');
 }
