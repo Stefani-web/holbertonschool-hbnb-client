@@ -1,16 +1,19 @@
-from uuid import uuid4
 from flask import Flask, request, jsonify
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 from flask_cors import CORS
 import json
 
-
 app = Flask(__name__)
-app.config.from_object('config.Config')
+app.config['JWT_SECRET_KEY'] = 'your_secret_key'  # Change this to a secure key
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = False  # Optional: configure token expiration
 
+# Initialize JWT manager
 jwt = JWTManager(app)
-CORS(app) # Enable CORS for all routes
 
+# Enable CORS for all routes
+CORS(app)
+
+# Load users and places from JSON files
 with open('data/users.json') as f:
     users = json.load(f)
 
@@ -20,13 +23,14 @@ with open('data/places.json') as f:
 # In-memory storage for new reviews
 new_reviews = []
 
+
 @app.route('/login', methods=['POST'])
 def login():
     email = request.json.get('email')
     password = request.json.get('password')
 
     user = next((u for u in users if u['email'] == email and u['password'] == password), None)
-    
+
     if not user:
         print(f"User not found or invalid password for: {email}")
         return jsonify({"msg": "Invalid credentials"}), 401
@@ -51,6 +55,7 @@ def get_places():
         for place in places
     ]
     return jsonify(response)
+
 
 @app.route('/places/<place_id>', methods=['GET'])
 def get_place(place_id):
@@ -79,6 +84,7 @@ def get_place(place_id):
     }
     return jsonify(response)
 
+
 @app.route('/places/<place_id>/reviews', methods=['POST'])
 @jwt_required()
 def add_review(place_id):
@@ -98,6 +104,13 @@ def add_review(place_id):
 
     new_reviews.append(new_review)
     return jsonify({"msg": "Review added"}), 201
+
+
+@app.route('/countries', methods=['GET'])
+def get_countries():
+    countries = list({place['country_name'] for place in places})
+    return jsonify(countries)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
