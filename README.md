@@ -25,7 +25,7 @@ To set up the project locally:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Delphine-H/holbertonschool-hbnb-client.git
+    git clone https://github.com/Stefani-web/holbertonschool-hbnb-client
     cd holbertonschool-hbnb-client
     ```
 2. Open the project in your preferred code editor.
