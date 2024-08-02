@@ -1,4 +1,3 @@
-
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: #f4f4f4;
@@ -6,7 +5,7 @@ body {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     text-align: center;
@@ -203,5 +202,41 @@ main {
 
 .add-review label {
     font-weight: bold;
-    padding-bottom: 5px;
+    padding-bottom: 5
+}
+
+/* Styles pour la modale */
+.modal {
+  display: none; /* Cachée par défaut */
+  position: fixed; /* Reste en place */
+  z-index: 1; /* Au-dessus de tout */
+  left: 0;
+  top: 0;
+  width: 100%; /* Largeur complète */
+  height: 100%; /* Hauteur complète */
+  overflow: auto; /* Scroll si nécessaire */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Noir avec opacité */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% à partir du haut et centré */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Pourrait être plus ou moins, selon le besoin */
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
