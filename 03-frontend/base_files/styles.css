@@ -1,134 +1,205 @@
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+h2 {
+    text-align: left;
+    margin-left: 15px;
+}
+
+p, a, button, input, select, textarea {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #f8f8f8;
-  border-bottom: 1px solid #ddd;
+    background-color: #FF5A5F;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 .logo {
-  height: 40px;
+    height: 50px;
 }
 
 .login-button {
-  text-decoration: none;
-  color: #FF5A5F;
-  font-weight: bold;
+    background-color: #FF5A5F;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.login-button:hover {
+    background-color: #FF5A5F;
 }
 
 footer {
-  text-align: center;
-  padding: 10px 0;
-  background-color: #FF5A5F;
-  border-top: 1px solid #ddd;
+    background-color: #FF5A5F;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    bottom: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.login-form, .review-form {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+main {
+    padding: 20px;
 }
 
-.login-form label, .review-form label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
+#filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-.login-form input, .review-form textarea, .review-form select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+#filter label, #filter select {
+    margin: 0 10px;
 }
-
-.login-form button, .review-form button {
-  width: 100%;
-  padding: 10px;
-  background-color: #FF5A5F;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.places-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 20px;
+#filter label {
+    font-weight: bold;
 }
 
 .place-card {
-  width: 300px;
-  margin: 20px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    background-color: #fff;
+    flex:1;
+    min-width: 300px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .place-image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px 10px 0 0;
+    width: 100%;
+    border-radius: 10px;
 }
 
 .details-button {
-  margin-top: 10px;
-  padding: 10px;
-  border: none;
-  background-color: #FF5A5F;
-  color: white;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
+    background-color: #FF5A5F;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.details-button:hover {
+    background-color: #FF5A5F;
 }
 
 .place-details {
-  max-width: 800px;
-  margin: 50px auto;
+    border: 1px solid #cfcdcd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
 }
 
 .place-image-large {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+    width: 100%;
+    border-radius: 10px;
 }
 
 .place-info {
-  margin: 20px 0;
+    margin-top: 20px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
 }
 
-.reviews {
-  margin-top: 30px;
+#places-list {
+    display: flex;
+    gap:0px;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .review-card {
-  margin: 20px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    background-color: #fff;
+    text-align: left;
+    flex: 0 1 calc(33.333% - 40px);
+    box-sizing: border-box;
+}
+.review-card p:first-child strong {
+    display:block;
+    margin-bottom: 10px;
+}
+.review-card p:last-child strong {
+    font-weight: normal;
+}
+.add-review {
+    margin: 20px;
 }
 
-.add-review {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #333;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
+.add-review form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-review textarea {
+    resize: vertical;
+    padding: 10px;
+    padding-left: 0px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+}
+
+.add-review select,
+.add-review button {
+    padding: 10px;
+    padding-left: 0px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.add-review button {
+    background-color: #FF5A5F;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.add-review button:hover {
+    background-color: #FF5A5F;
+}
+
+.add-review label {
+    font-weight: bold;
+    padding-bottom: 5px;
 }
