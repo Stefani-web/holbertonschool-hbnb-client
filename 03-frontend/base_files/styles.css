@@ -44,11 +44,11 @@ header {
 }
 
 .login-button {
-    background-color: #FF5A5F;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+  background-color: #FF5A5F;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .login-button:hover {
@@ -124,8 +124,10 @@ main {
 }
 
 .place-image-large {
-    width: 100%;
-    border-radius: 10px;
+  width: 30%;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
 }
 
 .place-info {
