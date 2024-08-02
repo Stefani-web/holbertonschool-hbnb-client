@@ -39,12 +39,19 @@
                 <!-- Répéter pour les autres commentaires -->
             </section>
 
-            <a href="add_review.html" class="add-review">Add a Review</a>
-        </section>
+            <section id="add-review">
+              <button id="review-button">Add review</button>
+              <form id="review-form">
+                  <h2>Add a Review</h2>
+                  <label for="review-text">Review:</label>
+                  <textarea id="review-text" name="review-text" required></textarea>
+                  <button type="submit">Submit</button>
+              </form>
+          </section>
     </main>
-
     <footer>
         <p>&copy; 2024 All rights reserved.</p>
     </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
